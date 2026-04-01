@@ -1,0 +1,10 @@
+# Robots.txt for Nuel's Science Tutorial
+# This file tells search engines which pages to crawl
+
+#Allow all wweb crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location (replace with actual site URL after deployment)
+Sitemap:
+https://nuelssciencetutorial.netlify.app/sitemap.xml

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://nuelssciencetutorial.netlify.app/index.html</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.00</priority>
+  </url>
+
+  <!-- About page -->
+  <url>
+  <loc>https://nuelssciencetutorial.netlify.app/about.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+    </url>
+
+  <!-- Tutors main page -->
+  <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutors.html</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.90</priority>
+    </url>
+
+  <!-- Individual tutor pages -->
+  <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutor1.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.70</priority>
+    </url>
+
+    <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutor2.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.70</priority>
+    </url>
+
+    <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutor3.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.70</priority>
+    </url>
+
+    <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutor4.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.70</priority>
+    </url>
+
+    <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutor5.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.70</priority>
+    </url>
+
+  <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/tutor6.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.70</priority>
+    </url>
+
+  <!-- Privacy Policy -->
+  <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/privacy.html</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.40</priority>
+  </url>
+
+  <!-- Terms of Use -->
+  <url>
+
+  <loc>https://nuelssciencetutorial.netlify.app/terms.html</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.40</priority>
+    </url>
+
+  </urlset>
