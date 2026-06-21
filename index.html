@@ -1,150 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-    <title>NUEL'S SCIENCE TUTORIAL | Helping students Excel in WAEC, JAMB & Science Subjects</title>
-    <link rel="stylesheet">
-    <meta name="description" content="Nuel's Science Tutorial offers experrt tutoring for WAEC, JAMB,
-    SSCE Science Subjects. Helping students succeed with practical lessons."
-href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuel's Science Tutorial | WAEC, JAMB &amp; Science Tutoring in Ogun State</title>
+<meta name="description" content="Nuel's Science Tutorial helps students excel in WAEC, JAMB, and core science subjects through expert tutors and structured, practical lessons in Lagos, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-deep:#081730;
+    --blue:#1E4FBF;
+    --blue-bright:#2C63E0;
+    --ice:#EEF3FC;
+    --white:#FFFFFF;
+    --slate:#3A4456;
+    --slate-light:#6B7588;
+    --line:#D7E1F4;
+    --gold:#C8A24A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--slate);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Source Serif 4', serif;
+    color:var(--navy);
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    position: relative;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Source Serif 4',serif;font-weight:700;font-size:17px;border:2px solid var(--gold);overflow:hidden;padding:0;}
+.brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .brand-name{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--navy);line-height:1.1;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:0.1em;color:var(--slate-light);text-transform:uppercase;margin-top:2px;}
+  nav.links{display:flex;align-items:center;gap:36px;}
+nav.links a{font-size:14.5px;font-weight:500;color:var(--slate);}
+nav.links a:hover{color:var(--blue);}
+
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;}
+.burger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width:920px){
+  .burger{display:flex;}
+  nav.links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease;
+    z-index: 60;
+  }
+  nav.links.open{max-height:320px;}
+  nav.links a{width:100%;padding:14px 32px;border-bottom:1px solid var(--ice);font-size:15px;}
+}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--blue);color:var(--white);
+    padding:11px 22px;border-radius:3px;
+    font-size:14px;font-weight:600;letter-spacing:0.01em;
+    border:1px solid var(--blue);
+    transition:all .2s ease;
+  }
+  .btn:hover{background:var(--navy);border-color:var(--navy);}
+  .btn-outline{
+    background:transparent;color:var(--navy);border:1px solid var(--navy);
+  }
+  .btn-outline:hover{background:var(--navy);color:var(--white);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--navy);
+    background-image:radial-gradient(circle at 85% 20%, rgba(255,255,255,0.05), transparent 45%);
+    color:var(--white);
+    padding:88px 0 100px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;
+  }
+  .hero h1{
+    color:var(--white);
+    font-size:46px;line-height:1.18;font-weight:600;margin-bottom:22px;
+  }
+  .hero h1 em{font-style:normal;color:#9DC0FF;}
+  .hero p.lead{
+    font-size:16.5px;line-height:1.7;color:#C7D4EC;max-width:480px;margin-bottom:32px;
+  }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-meta{
+    display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;
+  }
+  .hero-meta div{border-left:2px solid var(--gold);padding-left:14px;}
+  .hero-meta strong{display:block;font-family:'Source Serif 4',serif;font-size:24px;color:var(--white);font-weight:600;}
+  .hero-meta span{font-size:12px;color:#9FB0CE;letter-spacing:0.03em;}
+
+  /* Result-slip signature card */
+  .slip{
+    background:var(--white);
+    color:var(--navy);
+    border-radius:6px;
+    padding:30px 32px;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.45);
+    position:relative;
+    transform:rotate(1.2deg);
+  }
+  .slip::before{
+    content:"";position:absolute;inset:10px;border:1px dashed var(--line);border-radius:3px;pointer-events:none;
+  }
+  .slip-head{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    border-bottom:2px solid var(--navy);padding-bottom:14px;margin-bottom:16px;
+  }
+  .slip-head h4{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);}
+  .slip-head .badge{
+    background:var(--gold);color:var(--navy-deep);font-size:10.5px;font-weight:700;
+    padding:4px 9px;border-radius:2px;letter-spacing:0.05em;
+  }
+  .slip-row{
+    display:grid;grid-template-columns:1fr auto auto;gap:10px;
+    font-size:13.5px;padding:9px 0;border-bottom:1px solid #EEF1F8;align-items:center;
+  }
+  .slip-row span.subj{color:var(--slate);font-weight:500;}
+  .slip-row span.grade{
+    font-family:'Source Serif 4',serif;font-weight:600;color:var(--blue);font-size:15px;
+  }
+  .slip-row span.pct{color:var(--slate-light);font-size:12px;}
+  .slip-foot{margin-top:16px;display:flex;justify-content:space-between;align-items:center;}
+  .slip-foot .stamp{
+    font-family:'Source Serif 4',serif;font-style:italic;color:var(--gold);font-size:13px;border:1px solid var(--gold);padding:4px 10px;border-radius:2px;
+    transform:rotate(-3deg);
+  }
+
+  /* ---------- SECTIONS GENERIC ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:620px;margin-bottom:56px;}
+  .section-head h2{font-size:32px;margin-top:10px;}
+  .section-head p{margin-top:14px;font-size:15.5px;line-height:1.7;color:var(--slate-light);}
+  .bg-ice{background:var(--ice);}
+
+  /* services */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{
+    background:var(--white);padding:36px 32px;
+  }
+  .service-num{font-family:'Source Serif 4',serif;font-size:13px;color:var(--gold);font-weight:600;letter-spacing:0.05em;}
+  .service-card h3{font-size:19px;margin:14px 0 10px;}
+  .service-card p{font-size:14.5px;line-height:1.65;color:var(--slate-light);}
+  .service-list{margin-top:14px;list-style:none;}
+  .service-list li{
+    font-size:13.5px;color:var(--slate);padding:6px 0 6px 18px;position:relative;border-top:1px solid #EEF1F8;
+  }
+  .service-list li:first-child{border-top:none;}
+  .service-list li::before{
+    content:"";position:absolute;left:0;top:14px;width:6px;height:1px;background:var(--blue);
+  }
+
+  /* stats / achievements */
+  .stats-band{
+    background:var(--navy);color:var(--white);padding:64px 0;
+  }
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+  .stat{text-align:center;border-right:1px solid rgba(255,255,255,0.12);padding:0 20px;}
+  .stat:last-child{border-right:none;}
+  .stat strong{
+    font-family:'Source Serif 4',serif;font-size:42px;font-weight:600;color:var(--white);display:block;
+  }
+  .stat span{font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;color:#9FB0CE;}
+
+  /* about teaser */
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:flex-start;}
+  .about-grid .quote{
+    font-family:'Source Serif 4',serif;font-size:23px;line-height:1.5;color:var(--navy);font-weight:500;
+    border-left:3px solid var(--blue);padding-left:24px;
+  }
+  .about-grid .body p{font-size:15px;line-height:1.75;color:var(--slate);margin-bottom:16px;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .pill{
+    border:1px solid var(--line);background:var(--white);padding:7px 14px;border-radius:30px;font-size:12.5px;font-weight:500;color:var(--navy);
+  }
+
+  /* tutors */
+  .tutors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tutor-card{
+    background:var(--white);border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .tutor-card:hover{box-shadow:0 18px 40px -22px rgba(11,31,58,0.35);transform:translateY(-3px);}
+  .tutor-photo{
+    height:700px;background:var(--ice);display:flex;align-items:center;justify-content:center;
+    color:var(--blue);font-family:'Source Serif 4',serif;font-size:30px;font-weight:600;
+    border-bottom:1px solid var(--line);
+  }
+  .tutor-photo img{width:100%;height:700px;object-fit: cover;object-position:top center;display:block;}
+  .tutor-info{padding:18px 20px 22px;}
+  .tutor-info h4{font-size:16px;margin-bottom:4px;}
+  .tutor-info .role{font-size:12.5px;color:var(--blue);font-weight:600;letter-spacing:0.02em;}
+  .tutor-info p{font-size:13px;color:var(--slate-light);margin-top:8px;line-height:1.6;}
+
+  /* CTA band */
+  .cta-band{
+    background:var(--blue);color:var(--white);padding:72px 0;text-align:center;
+  }
+  .cta-band h2{color:var(--white);font-size:30px;margin-bottom:14px;}
+  .cta-band p{color:#DCE8FF;font-size:15px;margin-bottom:28px;}
+  .cta-band .btn{background:var(--white);color:var(--blue);border-color:var(--white);}
+  .cta-band .btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .contact-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .contact-item .ic{
+    width:38px;height:38px;border-radius:50%;background:var(--ice);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;font-weight:600;font-family:'Source Serif 4',serif;font-size:14px;flex-shrink:0;
+  }
+  .contact-item h4{font-size:14.5px;color:var(--navy);margin-bottom:3px;}
+  .contact-item p{font-size:13.5px;color:var(--slate-light);}
+
+  /* footer */
+  footer{background:var(--navy-deep);color:#A9B7D2;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h5{color:var(--white);font-size:13.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;font-family:'Inter',sans-serif;font-weight:600;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;}
+  footer a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12.5px;color:#7385A6;flex-wrap:wrap;gap:10px;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;}
+    .slip{transform:none;max-width:420px;}
+    .services-grid,.tutors-grid{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:1fr;gap:24px;}
+    .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:24px;}
+    .stat:last-child{border-bottom:none;}
+    .about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:34px;}
+  }
+  /* ===== universal mobile safety net ===== */
+html{-webkit-text-size-adjust:100%;}
+body{overflow-x:hidden;}
+img{max-width:100%;height:auto;}
+.wrap,.doc-wrap{padding-left:20px;padding-right:20px;}
+
+@media (max-width:600px){
+  .nav{padding:14px 20px;}
+  .brand-name{font-size:15px;}
+  .brand-name span{font-size:9.5px;}
+  .btn{padding:9px 16px;font-size:13px;}
+
+  section{padding:56px 0;}
+  .page-hero{padding:44px 0 36px;}
+  .page-hero h1{font-size:25px;}
+  .page-hero p{font-size:14px;}
+
+  h2{font-size:22px !important;}
+  .section-head h2{font-size:22px !important;}
+
+  .hero{padding:56px 0 64px;}
+  .hero h1{font-size:27px !important;}
+  .hero p.lead{font-size:14.5px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-cta .btn{justify-content:center;text-align:center;}
+  .hero-meta{gap:18px;}
+  .hero-meta strong{font-size:19px;}
+
+  .slip{padding:22px 18px;}
+  .slip-row{font-size:12.5px;grid-template-columns:1fr auto auto;}
+
+  .services-grid,.tutors-grid,.subjects-grid{grid-template-columns:1fr !important;}
+  .stat strong{font-size:32px;}
+
+  .about-grid,.mission-grid,.contact-grid{grid-template-columns:1fr !important;gap:32px !important;}
+
+  .doc-card{padding:24px 18px !important;}
+  .doc-card h2{font-size:16px;}
+  .doc-card p,.doc-card li{font-size:13.5px;}
+
+  .cta-band h2{font-size:22px;}
+  .footer-grid{grid-template-columns:1fr !important;gap:28px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:23px !important;}
+  .brand-name span{display:none;}
+}
+</style>
 </head>
-
 <body>
-  
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="nav-logo">
-      <img src="images/logo.png"
-  alt="Logo"
-      <span>NUEL'S SCIENCE TUTORIAL</span>
-    </div>
-
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="tutors.html">Tutors</a>
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <div class="brand-mark"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+      <div class="brand-name">Nuel's Science Tutorial<span>Ogun State, Nigeria</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#services">Programmes</a>
       <a href="about.html">About</a>
+      <a href="tutors.html">Tutors</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Book a session</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">WAEC · JAMB · SSCE Science</span>
+      <h1>Disciplined science tuition, <em>built for results.</em></h1>
+      <p class="lead">Nuel's Science Tutorial pairs students with experienced tutors and a structured curriculum to turn WAEC and JAMB preparation into measurable progress — not guesswork.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Chat with us on WhatsApp</a>
+        <a class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5);" href="#tutors">Meet our tutors</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>95%</strong><span>Pass rate</span></div>
+        <div><strong>600+</strong><span>Students tutored</span></div>
+        <div><strong>5</strong><span>Core subjects covered</span></div>
+      </div>
     </div>
-  </nav>
 
-<!-- HOME CONTENT -->
- <main class="home">
-      <h1 class="lightning-text">Welcome to Nuel's Science Tutorial</h1>
-      <section id="services"
-    class="services">
-      <p>Select a section to continue</p>
-      <div class="welcome-buttons">
-      <a
-      href="https://wa.me/2348126296816?text=Good%20day%20sir,%20I%20want%20to%20make%20enquiry%20about%20NUEL%20SCIENCE
-      %20can%20you%20send%20me%20more%20details?"
-         target="_blank"
-         class="whatsapp-btn">
-            Chat with us on Whatsapp
-      </a>
-
-      
-
-      <a href="tutors.html" 
-      class="primary-btn">
-             View our Tutors
-      </a>
+    <div class="slip reveal">
+      <div class="slip-head">
+        <h4>Term result &mdash; Sciences</h4>
+        <span class="badge">Verified</span>
+      </div>
+      <div class="slip-row"><span class="subj">Mathematics</span><span class="grade">A1</span><span class="pct">92%</span></div>
+      <div class="slip-row"><span class="subj">Physics</span><span class="grade">A1</span><span class="pct">88%</span></div>
+      <div class="slip-row"><span class="subj">Chemistry</span><span class="grade">B2</span><span class="pct">81%</span></div>
+      <div class="slip-row"><span class="subj">Biology</span><span class="grade">A1</span><span class="pct">90%</span></div>
+      <div class="slip-row" style="border-bottom:none;"><span class="subj">English Language</span><span class="grade">B3</span><span class="pct">78%</span></div>
+      <div class="slip-foot">
+        <span style="font-size:11.5px;color:var(--slate-light);">Fueling young minds since inception</span>
+        <span class="stamp">Nuel's Science</span>
+      </div>
     </div>
-    </main>
-        
-
-  <!-- Logo at the top -->
-      <div class="logo-flyer">
-        <img src="images/logo.png"
-        alt="Logo">
-         </div>
-
-  <!-- Header -->
-  <header>
-    <h1>NUEL'S SCIENCE TUTORIAL</h1>
-    <p>Motto: Fueling Young Minds</p> 
-
-    <h2>Our Services</h2>
-         <div class="card">Waec Tutoring</div>
-         <div class="card">JAMB Prep</div>
-         <div class="card">SSCE Science Subjects</div>
-        </div>
-      </section>
-
-      <section class="stats">
-        <h2>Our Achievements</h2>
-        <div class="stats-cards">
-          <div class="stat-card">
-            <h3>95%</h3>
-            <p>Pass Rate</p>
-          </div>
-          <div class="stat-card">
-            <h3>600+</h3>
-            <p>Students Tutored</p>
-          </div>
-            <div class="stat-card">
-              <h3>4+</h3>
-              <p>Hours of Tutorials</p>
-            </div>
-          </section>
-
-  </header>
-
-  
-      
-
- 
-<!-- Contact Session  -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p> For more enquiries: 08126296816, 07085301545</p>
-  <p> Lagos, Nigeria</p>
+  </div>
 </section>
 
-<script src="script.js"></script>
-
-<button id="scrollTopBtn"> Top</button>
-<script src="script.js"></script>
-
-<footer class="site-footer">
-  <div class="footer-container">
-
-  <!-- Contact and Copyright -->
-  <div class="footer-left">
-    <p>© 2026 Nuel's Science Tutorial. All  Rights Reserved.</p>
-    <p>
-      Contact us: 
-      <a
-href="mailto:bamideledabira43@gmail.com"></a> |
-        <a
-href="https://wa.me/2348126296816?text=Good%20day%20sir,%20I%20want%20to%20make%20enquiry%20about%20NUEL%20SCIENCE
-      %20can%20you%20send%20me%20more%20details?"
-target="_blank">Whatsapp</a>
-      </p>
+<section id="services" class="bg-ice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Programmes</span>
+      <h2>Three tracks, one standard of rigour.</h2>
+      <p>Every programme follows the same structured approach: diagnose gaps, teach the syllabus properly, then drill exam technique until it's second nature.</p>
     </div>
-
-  <!-- Navigation Links -->
-  <div class="footer-center">
-    <a href="about.html">About Us</a>
-    <a href="tutors.html">Our Tutors</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Use</a> 
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01</span>
+        <h3>WAEC tutoring</h3>
+        <p>Full syllabus coverage across the sciences, paced against the WAEC timetable.</p>
+        <ul class="service-list">
+          <li>Topic-by-topic syllabus walkthrough</li>
+          <li>Past-question drilling</li>
+          <li>Mock exams with feedback</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">02</span>
+        <h3>JAMB prep</h3>
+        <p>Focused UTME preparation built around speed, accuracy, and CBT familiarity.</p>
+        <ul class="service-list">
+          <li>CBT-style practice tests</li>
+          <li>Subject combination strategy</li>
+          <li>Weekly score tracking</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">03</span>
+        <h3>SSCE science subjects</h3>
+        <p>One-on-one and small-group lessons in Mathematics, Physics, Chemistry, and Biology.</p>
+        <ul class="service-list">
+          <li>Concept-first teaching</li>
+          <li>Practical, real-world examples</li>
+          <li>Continuous assessment</li>
+        </ul>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- Social Media -->
-  <div class="footer-right">
-    <a href="#" target="_blank">📘</a> <!-- Facebook -->
-    <a href="#" target="-blank">▶</a>  <!-- YouTube-->
+<div class="stats-band">
+  <div class="wrap stats-grid">
+    <div class="stat reveal"><strong>95%</strong><span>Pass rate</span></div>
+    <div class="stat reveal"><strong>600+</strong><span>Students tutored</span></div>
+    <div class="stat reveal"><strong>2+</strong><span>Years of tutorials</span></div>
   </div>
+</div>
 
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About us</span>
+      <p class="quote" style="margin-top:14px;">Where knowledge meets excellence.</p>
+    </div>
+    <div class="body">
+      <p>Our mission is to make education practical, accessible, and impactful at every stage of a student's journey. Lessons are carefully structured and focused on real understanding, not memorisation &mdash; so students build genuine confidence, not just exam answers.</p>
+      <p>We believe every student deserves the chance to learn and grow, regardless of background. Through clear teaching, dedicated tutors, and consistent practice, we aim to be a trusted name in science education across Ogun State and beyond.</p>
+      <div class="pill-row">
+        <span class="pill">Mathematics</span>
+        <span class="pill">English Language</span>
+        <span class="pill">Physics</span>
+        <span class="pill">Chemistry</span>
+        <span class="pill">Biology</span>
+      </div>
+    </div>
   </div>
-  </footer>
+</section>
+
+<section id="tutors" class="bg-ice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our tutors</span>
+      <h2>Taught by people who know the syllabus inside out.</h2>
+      <p>Every tutor is selected for subject mastery and the ability to explain clearly under exam pressure.</p>
+    </div>
+    <div class="tutors-grid">
+      <div class="tutor-card reveal"><div class="tutor-photo"><img src="images/tutor1.jpg"></div><div class="tutor-info"><h4>Tutor 1</h4><span class="role">All</span><p>Specialist in WAEC &amp; JAMB Mathematics technique.</p></div></div>
+      <div class="tutor-card reveal"><div class="tutor-photo"><img src="images/tutor2.jpg"></div><div class="tutor-info"><h4>Tutor 2</h4><span class="role">All</span><p>Focused on concept clarity and practical problem-solving.</p></div></div>
+      <div class="tutor-card reveal"><div class="tutor-photo"><img src="images/tutor3.jpg"></div><div class="tutor-info"><h4>Tutor 3</h4><span class="role">All</span><p>Bridges theory with real-world application.</p></div></div>
+      <div class="tutor-card reveal"><div class="tutor-photo"><img src="images/tutor4.jpg"></div><div class="tutor-info"><h4>Tutor 4</h4><span class="role">All</span><p>Known for structured, easy-to-follow lessons.</p></div></div>
+      <div class="tutor-card reveal"><div class="tutor-photo"><img src="images/tutor5.jpg"></div><div class="tutor-info"><h4>Tutor 5</h4><span class="role">All</span><p>Builds comprehension and exam-writing skill.</p></div></div>
+      <div class="tutor-card reveal"><div class="tutor-photo"><img src="images/tutor6.jpg"></div><div class="tutor-info"><h4>Tutor 6</h4><span class="role">All</span><p>Supports cross-subject revision and mock exams.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Ready to start improving your scores?</h2>
+    <p>Message us today to find the right programme for your goals.</p>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Chat with us on WhatsApp</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2 style="margin-top:10px;font-size:28px;">We're happy to answer questions.</h2>
+      <p style="margin-top:14px;font-size:15px;color:var(--slate-light);line-height:1.7;">Reach out by phone, WhatsApp, or email and we'll respond with details on programmes, pricing, and availability.</p>
+    </div>
+    <div>
+      <div class="contact-item">
+        <div class="ic">P</div>
+        <div><h4>Phone</h4><p>0812 629 6816 &nbsp;&middot;&nbsp; 0708 530 1545</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="ic">E</div>
+        <div><h4>Email</h4><p>bamideledabira43@gmail.com</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="ic">L</div>
+        <div><h4>Location</h4><p>Ogun State, Nigeria</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark" style="background:#fff;color:var(--navy);"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+          <div style="color:#fff;font-family:'Source Serif 4',serif;font-weight:600;">Nuel's Science Tutorial</div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.7;max-width:300px;">Helping students excel in WAEC, JAMB, and the core sciences through structured, practical teaching.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="tutors.html">Our tutors</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of use</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a></li>
+          <li><a href="https://wa.me/2348126296816">WhatsApp us</a></li>
+          <li>0812 629 6816</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Nuel's Science Tutorial. All rights reserved.</span>
+      <span>Ogun State, Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  },{threshold:0.15});
+  els.forEach(el=>obs.observe(el));
+</script>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burgerBtn.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
 
 
-    </p>
 </body>
 </html>
-
-
-      

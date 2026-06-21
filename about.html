@@ -1,43 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Us | NUEL'S SCIENCE TUTORIAL</title>
-    <link rel="stylesheet"
-href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Nuel's Science Tutorial</title>
+<meta name="description" content="Learn about Nuel's Science Tutorial &mdash; our mission, vision, and the subjects we teach in Lagos, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --navy-deep:#081730; --blue:#1E4FBF; --blue-bright:#2C63E0;
+    --ice:#EEF3FC; --white:#FFFFFF; --slate:#3A4456; --slate-light:#6B7588;
+    --line:#D7E1F4; --gold:#C8A24A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--slate);background:var(--white);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Source Serif 4', serif;color:var(--navy);font-weight:600;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);font-weight:600;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{position: relative;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;border:2px solid var(--gold);}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .brand-name{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--navy);line-height:1.1;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:0.1em;color:var(--slate-light);text-transform:uppercase;margin-top:2px;}
+  nav.links{display:flex;align-items:center;gap:36px;}
+nav.links a{font-size:14.5px;font-weight:500;color:var(--slate);}
+nav.links a:hover{color:var(--blue);}
+
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;}
+.burger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width:920px){
+  .burger{display:flex;}
+  nav.links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease;
+    z-index: 60;
+  }
+  nav.links.open{max-height:320px;}
+  nav.links a{width:100%;padding:14px 32px;border-bottom:1px solid var(--ice);font-size:15px;}
+}
+  nav.links a.active{color:var(--blue);}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);padding:11px 22px;border-radius:3px;font-size:14px;font-weight:600;border:1px solid var(--blue);transition:all .2s ease;}
+  .btn:hover{background:var(--navy);border-color:var(--navy);}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:64px 0 56px;}
+  .page-hero h1{color:var(--white);font-size:38px;margin-top:10px;}
+  .page-hero p{color:#C7D4EC;font-size:15.5px;max-width:560px;margin-top:14px;line-height:1.7;}
+
+  section{padding:88px 0;}
+  .bg-ice{background:var(--ice);}
+
+  .mission-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:flex-start;}
+  .mission-grid + .mission-grid{margin-top:88px;}
+  .label-col{position:static;}
+  .label-col .num{font-family:'Source Serif 4',serif;color:var(--gold);font-size:14px;font-weight:600;}
+  .label-col h2{font-size:28px;margin-top:10px;}
+  .body-col p{font-size:15.5px;line-height:1.8;color:var(--slate);margin-bottom:18px;}
+
+  .subjects-band{padding:70px 0;}
+  .subjects-band .section-head{max-width:600px;margin-bottom:40px;}
+  .subjects-band .section-head h2{font-size:28px;margin-top:10px;}
+  .subjects-band .section-head p{margin-top:12px;font-size:15px;color:var(--slate-light);line-height:1.7;}
+  .subjects-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .subject-cell{background:var(--white);padding:26px 18px;text-align:center;}
+  .subject-cell .ic{font-family:'Source Serif 4',serif;color:var(--blue);font-size:22px;font-weight:600;margin-bottom:10px;}
+  .subject-cell span{font-size:13px;font-weight:500;color:var(--navy);}
+
+  .cta-band{background:var(--blue);color:var(--white);padding:64px 0;text-align:center;}
+  .cta-band h2{color:var(--white);font-size:28px;margin-bottom:12px;}
+  .cta-band p{color:#DCE8FF;font-size:14.5px;margin-bottom:26px;}
+  .cta-band .btn{background:var(--white);color:var(--blue);border-color:var(--white);}
+  .cta-band .btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  footer{background:var(--navy-deep);color:#A9B7D2;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h5{color:var(--white);font-size:13.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;font-family:'Inter',sans-serif;font-weight:600;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;}
+  footer a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12.5px;color:#7385A6;flex-wrap:wrap;gap:10px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:920px){
+    .mission-grid{grid-template-columns:1fr;}
+    .label-col{position:static;}
+    .subjects-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr;}
+    .page-hero h1{font-size:30px;}
+  }
+  /* ===== universal mobile safety net ===== */
+html{-webkit-text-size-adjust:100%;}
+body{overflow-x:hidden;}
+img{max-width:100%;height:auto;}
+.wrap,.doc-wrap{padding-left:20px;padding-right:20px;}
+
+@media (max-width:600px){
+  .nav{padding:14px 20px;}
+  .brand-name{font-size:15px;}
+  .brand-name span{font-size:9.5px;}
+  .btn{padding:9px 16px;font-size:13px;}
+
+  section{padding:56px 0;}
+  .page-hero{padding:44px 0 36px;}
+  .page-hero h1{font-size:25px;}
+  .page-hero p{font-size:14px;}
+
+  h2{font-size:22px !important;}
+  .section-head h2{font-size:22px !important;}
+
+  .hero{padding:56px 0 64px;}
+  .hero h1{font-size:27px !important;}
+  .hero p.lead{font-size:14.5px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-cta .btn{justify-content:center;text-align:center;}
+  .hero-meta{gap:18px;}
+  .hero-meta strong{font-size:19px;}
+
+  .slip{padding:22px 18px;}
+  .slip-row{font-size:12.5px;grid-template-columns:1fr auto auto;}
+
+  .services-grid,.tutors-grid,.subjects-grid{grid-template-columns:1fr !important;}
+  .stat strong{font-size:32px;}
+
+  .about-grid,.mission-grid,.contact-grid{grid-template-columns:1fr !important;gap:32px !important;}
+
+  .doc-card{padding:24px 18px !important;}
+  .doc-card h2{font-size:16px;}
+  .doc-card p,.doc-card li{font-size:13.5px;}
+
+  .cta-band h2{font-size:22px;}
+  .footer-grid{grid-template-columns:1fr !important;gap:28px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:23px !important;}
+  .brand-name span{display:none;}
+}
+</style>
 </head>
+<body>
 
-</body>
+<header>
+  <div class="nav">
+    <a class="brand" href="/">
+     <div class="brand-mark"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+      <div class="brand-name">Nuel's Science Tutorial<span>Lagos, Nigeria</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="/#services">Programmes</a>
+      <a href="/about" class="active">About</a>
+      <a href="/tutors">Tutors</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Book a session</a>
+  </div>
+</header>
 
-<!-- Navigation-->
-<nav class="navbar">
-  ...
-  </nav>
-
-<!-- About Content-->
-<div class="info-block">
-  <div class="info-title">
-    <span class="icon">📚</span>
-    <h1>About Nuel's Science Tutorial</h1>
-    </div>
-    <p>NUEL'S SCIENCE TUTORIAL: Where knowledge meets excellence! Expert tutors, interactive lessons,
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#9DC0FF;">About us</span>
+    <h1>Where knowledge meets excellence.</h1>
+    <p>Expert tutors, structured lessons, and a community built to help students ace WAEC and JAMB, taught with rigour, not shortcuts. NUEL'S SCIENCE TUTORIAL: Where knowledge meets excellence! Expert tutors, interactive lessons,
         and peer support to help you ACE UTME and WAEC! Let's achieve greatness together!
     COURSES OFFERED INCLUDES: 
     Mathematics
     English Language
     Physics
     Chemistry
-    Biology  
-    </p>
-    </div>
+    Biology  </p>
 
-    <!-- Our Mission -->
-    <div class="info-block">
-      <div class="info-title">
-        <span class="icon">🎯</span>
-        <h2>Our Mission</h2>
+  </div>
+</div>
+
+<section>
+  <a class="back-link" href="/">&larr; Back to home</a>
+  <div class="wrap">
+    <div class="mission-grid reveal">
+      <div class="label-col">
+        <span class="num">01</span>
+        <h2>Our mission</h2>
       </div>
-      <p>
-        Our mission is to create a learning environmenr that makes education practical,accessible, and impactful for learners
+      <div class="body-col">
+        <p>Our mission is to create a learning environmenr that makes education practical,accessible, and impactful for learners
         at every stage of their journey. We are committed to providing high-quality tutorials that are carefully structured,
         easy to understand, and focused on real world application rather than just theory.
 
@@ -50,16 +215,16 @@ href="style.css">
         to develop valuable skills, improve their abilities, and prepare for future opportunities. By fostering curiosity,
         consistency, and creativity, we work to inspire lifelong learning and personal development.
       </p>
+        
     </div>
 
-    <!-- Vision -->
-    <div class="info-block">
-      <div class="info-title">
-        <span class="icon">🚀</span>
-        <h2>Our Vision</h2>
+    <div class="mission-grid reveal">
+      <div class="label-col">
+        <span class="num">02</span>
+        <h2>Our vision</h2>
       </div>
-      <p>
-        Our vision is to become a trusted and innovative learning platform that positively impacts learners across different
+      <div class="body-col">
+        <p>Our vision is to become a trusted and innovative learning platform that positively impacts learners across different
         communities and skill levels. We aspire to build a space where education is not limited by location, background,
         or resources, but is available to anyone with the desire to learn and improve.
 
@@ -72,14 +237,95 @@ href="style.css">
         teaching and sharing their expertise. We seek to inspire a culture of excellence, curiosity, and collaboration,
         where learning is not just about gaining information, but about developing the confidence and mindset needed to
         succeed in a rapidly changing world. Through dedication, innovation, and quality education, we strive to shape a 
-        future where learning is accessible, engaging, and empowering for everyone.
-      </p>
+        future where learning is accessible, engaging, and empowering for everyone.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <a href="index.html" class="back-btn"> Back</a>
+<section class="bg-ice subjects-band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Subjects offered</span>
+      <h2>The five core subjects WAEC and JAMB ask for.</h2>
+      <p>Every programme is built directly around the WAEC and JAMB syllabus, so nothing taught is wasted effort.</p>
+    </div>
+    <div class="subjects-grid">
+      <div class="subject-cell reveal"><div class="ic">∑</div><span>Mathematics</span></div>
+      <div class="subject-cell reveal"><div class="ic">Ab</div><span>English Language</span></div>
+      <div class="subject-cell reveal"><div class="ic">Φ</div><span>Physics</span></div>
+      <div class="subject-cell reveal"><div class="ic">Cl</div><span>Chemistry</span></div>
+      <div class="subject-cell reveal"><div class="ic">β</div><span>Biology</span></div>
+    </div>
+  </div>
+</section>
 
-<!-- Javascript -->
-<script src="script.js"></script>
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Want to know more about how we teach?</h2>
+    <p>Send us a message and we'll walk you through our programmes.</p>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Chat with us on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark" style="background:#fff;color:var(--navy);"><img src="images/logo.png"></div>
+          <div style="color:#fff;font-family:'Source Serif 4',serif;font-weight:600;">Nuel's Science Tutorial</div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.7;max-width:300px;">Helping students excel in WAEC, JAMB, and the core sciences through structured, practical teaching.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/tutors">Our tutors</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a></li>
+          <li><a href="https://wa.me/2348126296816">WhatsApp us</a></li>
+          <li>0812 629 6816</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Nuel's Science Tutorial. All rights reserved.</span>
+      <span>Ogun State, Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } }); },{threshold:0.15});
+  els.forEach(el=>obs.observe(el));
+</script>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burgerBtn.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
 
 </body>
 </html>
+

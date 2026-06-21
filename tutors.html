@@ -1,39 +1,329 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Tutors | Nuel's Science Tutorial</title>
+<meta name="description" content="Meet the tutors at Nuel's Science Tutorial, specialists in Mathematics, Physics, Chemistry, Biology, and English Language for WAEC and JAMB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --navy-deep:#081730; --blue:#1E4FBF; --blue-bright:#2C63E0;
+    --ice:#EEF3FC; --white:#FFFFFF; --slate:#3A4456; --slate-light:#6B7588;
+    --line:#D7E1F4; --gold:#C8A24A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--slate);background:var(--white);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Source Serif 4', serif;color:var(--navy);font-weight:600;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);font-weight:600;}
 
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{position: relative;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;border:2px solid var(--gold);}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .brand-name{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--navy);line-height:1.1;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:0.1em;color:var(--slate-light);text-transform:uppercase;margin-top:2px;}
+  nav.links{display:flex;align-items:center;gap:36px;}
+nav.links a{font-size:14.5px;font-weight:500;color:var(--slate);}
+nav.links a:hover{color:var(--blue);}
+
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;}
+.burger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width:920px){
+  .burger{display:flex;}
+  nav.links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease;
+    z-index: 60;
+  }
+  nav.links.open{max-height:320px;}
+  nav.links a{width:100%;padding:14px 32px;border-bottom:1px solid var(--ice);font-size:15px;}
+}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);padding:11px 22px;border-radius:3px;font-size:14px;font-weight:600;border:1px solid var(--blue);transition:all .2s ease;}
+  .btn:hover{background:var(--navy);border-color:var(--navy);}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:64px 0 56px;}
+  .page-hero h1{color:var(--white);font-size:38px;margin-top:10px;}
+  .page-hero p{color:#C7D4EC;font-size:15.5px;max-width:560px;margin-top:14px;line-height:1.7;}
+
+  section{padding:80px 0;}
+
+  .tutors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tutor-card{background:var(--white);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .25s ease, transform .25s ease;}
+  .tutor-card:hover{box-shadow:0 18px 40px -22px rgba(11,31,58,0.35);transform:translateY(-3px);}
+  .tutor-photo{height:700px;background:var(--ice);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Source Serif 4',serif;font-size:32px;font-weight:600;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+.tutor-photo img{width:100%;height:700px;object-fit:cover;object-position:top center;display:block;}
+  .tutor-photo .tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy-deep);font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:2px;letter-spacing:0.04em;}
+  .tutor-info{padding:20px 22px 24px;}
+  .tutor-info h4{font-size:17px;margin-bottom:4px;}
+  .tutor-info .role{font-size:12.5px;color:var(--blue);font-weight:600;letter-spacing:0.02em;}
+  .tutor-info p{font-size:13.5px;color:var(--slate-light);margin-top:10px;line-height:1.65;}
+  .tutor-info .contact-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:600;color:var(--navy);border-top:1px solid #EEF1F8;padding-top:14px;width:100%;}
+  .tutor-info .contact-link:hover{color:var(--blue);}
+
+  .cta-band{background:var(--blue);color:var(--white);padding:64px 0;text-align:center;}
+  .cta-band h2{color:var(--white);font-size:28px;margin-bottom:12px;}
+  .cta-band p{color:#DCE8FF;font-size:14.5px;margin-bottom:26px;}
+  .cta-band .btn{background:var(--white);color:var(--blue);border-color:var(--white);}
+  .cta-band .btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  footer{background:var(--navy-deep);color:#A9B7D2;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h5{color:var(--white);font-size:13.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;font-family:'Inter',sans-serif;font-weight:600;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;}
+  footer a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12.5px;color:#7385A6;flex-wrap:wrap;gap:10px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:920px){
+    .tutors-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    nav.links{display:flex;}
+    .page-hero h1{font-size:30px;}
+  }
+  /* ===== universal mobile safety net ===== */
+html{-webkit-text-size-adjust:100%;}
+body{overflow-x:hidden;}
+img{max-width:100%;height:auto;}
+.wrap,.doc-wrap{padding-left:20px;padding-right:20px;}
+
+@media (max-width:600px){
+  .nav{padding:14px 20px;}
+  .brand-name{font-size:15px;}
+  .brand-name span{font-size:9.5px;}
+  .btn{padding:9px 16px;font-size:13px;}
+
+  section{padding:56px 0;}
+  .page-hero{padding:44px 0 36px;}
+  .page-hero h1{font-size:25px;}
+  .page-hero p{font-size:14px;}
+
+  h2{font-size:22px !important;}
+  .section-head h2{font-size:22px !important;}
+
+  .hero{padding:56px 0 64px;}
+  .hero h1{font-size:27px !important;}
+  .hero p.lead{font-size:14.5px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-cta .btn{justify-content:center;text-align:center;}
+  .hero-meta{gap:18px;}
+  .hero-meta strong{font-size:19px;}
+
+  .slip{padding:22px 18px;}
+  .slip-row{font-size:12.5px;grid-template-columns:1fr auto auto;}
+
+  .services-grid,.tutors-grid,.subjects-grid{grid-template-columns:1fr !important;}
+  .stat strong{font-size:32px;}
+
+  .about-grid,.mission-grid,.contact-grid{grid-template-columns:1fr !important;gap:32px !important;}
+
+  .doc-card{padding:24px 18px !important;}
+  .doc-card h2{font-size:16px;}
+  .doc-card p,.doc-card li{font-size:13.5px;}
+
+  .cta-band h2{font-size:22px;}
+  .footer-grid{grid-template-columns:1fr !important;gap:28px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:23px !important;}
+  .brand-name span{display:none;}
+}
+</style>
+</head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar">
-  ...
-</nav>
+<header>
+  <div class="nav">
+    <a class="brand" href="/">
+     <div class="brand-mark"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+      <div class="brand-name">Nuel's Science Tutorial<span>Ogun State, Nigeria</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="/#services">Programmes</a>
+      <a href="about.html">About</a>
+      <a href="tutors.html" class="active">Tutors</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Book a session</a>
+  </div>
+</header>
 
-<!-- Tutors List-->
-<main class="tutors">
-  <h1>Our Tutors</h1>
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#9DC0FF;">Our tutors</span>
+    <h1>Taught by people who know the syllabus inside out.</h1>
+    <p>Every tutor is selected for subject mastery and the ability to explain clearly under exam pressure. Tap a tutor to reach us directly about their subject.</p>
+  </div>
+</div>
 
-  <section class="card-grid">
-    <!-- Tutor cards -->
-     <a href="tutor1.html"
-class="card">Tutor 1</a>
-     <a href="tutor2.html"
-class="card">Tutor 2</a>
-     <a href="tutor3.html"
-class="card">Tutor 3</a>
-     <a href="tutor4.html"
-class="card">Tutor 4</a>
-     <a href="tutor5.html"
-class="card">Tutor 5</a>
-     <a href="tutor6.html"
-class="card">Tutor 6</a>
-    </section>
+<section>
+     <a class="back-link" href="/">&larr; Back to home</a>
+  <div class="wrap">
+    <div class="tutors-grid">
 
-  <a href="index.html" class="back-btn"> Back</a>
-   
+      <div class="tutor-card reveal">
+        <div class="tutor-photo"><span class="tag">CEO</span><img src="images/tutor1.jpg"></div>
+        <div class="tutor-info">
+          <h4>Tutor 1</h4>
+          <span class="role">All</span>
+          <p>I am Tutor Dabira a specialist in WAEC &amp; JAMB Mathematics technique, with a focus on speed and accuracy under timed conditions.</p>
+          <a class="contact-link" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Mathematics%20lessons%20with%20Tutor%201.">Enquire about Mathematics &rarr;</a>
+        </div>
+      </div>
 
- <!-- Javascript -->
-<script src="script.js"></script>
+      <div class="tutor-card reveal">
+        <div class="tutor-photo"><span class="tag">CEO</span><img src="images/tutor2.jpg"></div>
+        <div class="tutor-info">
+          <h4>Tutor 2</h4>
+          <span class="role">All</span>
+          <p>I am Tutor Emmanuel and I am focused on concept clarity and practical problem-solving, turning abstract formulas into intuition.</p>
+          <a class="contact-link" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Physics%20lessons%20with%20Tutor%202.">Enquire about Physics &rarr;</a>
+        </div>
+      </div>
 
+      <div class="tutor-card reveal">
+        <div class="tutor-photo"><span class="tag">CO-FOUNDER</span><img src="images/tutor3.jpg"></div>
+        <div class="tutor-info">
+          <h4>Tutor 3</h4>
+          <span class="role">All</span>
+          <p>I am Tutor Ezekiel. I am a co founder of Nuel science tutorial and also the official H.O.D of academics, i graduated
+       from one of the prestigious university in ogun state. i am currently studying chemical engineering at uinversity of 
+       osun state popularly known as UNIOSUN. i have also been in the finals and knock out stages of STEM competitions like
+       OGF,interswitch spak,cowbellpedia,olympaid,Erudite maths contest,e.t.c. I had 7A'S in the WASSCE examination and 
+       300+ in UTME.
+
+       I am focused on simplifying concepts and enhancing understanding.</p>
+          <a class="contact-link" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Chemistry%20lessons%20with%20Tutor%203.">Enquire about Chemistry &rarr;</a>
+        </div>
+      </div>
+
+      <div class="tutor-card reveal">
+        <div class="tutor-photo"><span class="tag">CO-FOUNDER</span><img src="images/tutor4.jpg"></div>
+        <div class="tutor-info">
+          <h4>Tutor 4</h4>
+          <span class="role">All</span>
+          <p>I am Tutor Ade.
+       I am focused on supporting learners with patience, consistency, and effective explanations.Known for structured, easy-to-follow lessons that simplify dense topics into clear diagrams and steps.</p>
+          <a class="contact-link" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Biology%20lessons%20with%20Tutor%204.">Enquire about Biology &rarr;</a>
+        </div>
+      </div>
+
+      <div class="tutor-card reveal">
+        <div class="tutor-photo"><span class="tag">CO-FOUNDER</span><img src="images/tutor5.jpg"></div>
+        <div class="tutor-info">
+          <h4>Tutor 5</h4>
+          <span class="role">All</span>
+          <p>I am Tutor Korede, a Computer Science Student in the Federal university of Agriculture,Abeokuta (FUNAAB).
+        I have been in competitions like OGF, CowbellPedia, Interswich SPAK.
+        I am dedicated to helping students achieve their learning goals.Builds comprehension, grammar, and exam-writing skill for both WAEC and JAMB English papers.</p>
+          <a class="contact-link" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20English%20Language%20lessons%20with%20Tutor%205.">Enquire about English &rarr;</a>
+        </div>
+      </div>
+
+      <div class="tutor-card reveal">
+        <div class="tutor-photo"><span class="tag">CO-FOUNDER</span><img src="images/tutor6.jpg"></div>
+        <div class="tutor-info">
+          <h4>Tutor 6</h4>
+          <span class="role">All</span>
+          <p>I am Tutor Timileyin. A co founder of Nuel Science Tutorial and Head mathematics Tutor of Nuel Science Tutorial. I am 
+       a Mechatronics Engineering student at the Federal university of Agriculture, Abeokuta(FUNAAB). I had 6A'S in the WASSCE examination. I have been in the finals and knock out stages of STEM competitions 
+       like OGF,MAN,interswtich spak,cowbellpedia,OLYMPAIDS e.t.c
+
+       I am dedicated to emphasizing excellence, discipline and continuous improvement.Supports cross-subject revision, mock exams, and personalised feedback across all five core subjects.</p>
+          <a class="contact-link" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20General%20Science%20support%20with%20Tutor%206.">Enquire about General Science &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Not sure which tutor fits your goals?</h2>
+    <p>Tell us your subjects and target exam, we'll match you with the right tutor.</p>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Chat with us on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark" style="background:#fff;color:var(--navy);"><img src="images/logo.png"></div>
+          <div style="color:#fff;font-family:'Source Serif 4',serif;font-weight:600;">Nuel's Science Tutorial</div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.7;max-width:300px;">Helping students excel in WAEC, JAMB, and the core sciences through structured, practical teaching.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/tutors">Our tutors</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a></li>
+          <li><a href="https://wa.me/2348126296816">WhatsApp us</a></li>
+          <li>0812 629 6816</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Nuel's Science Tutorial. All rights reserved.</span>
+      <span>Ogun State, Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } }); },{threshold:0.15});
+  els.forEach(el=>obs.observe(el));
+</script>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burgerBtn.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
 </body>
 </html>

@@ -1,48 +1,251 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-content="width=device-width,initial-scale=1.0">
-    <title>Terms of Use</title>
-    <link rel="stylesheet"
-href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use | Nuel's Science Tutorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --navy-deep:#081730; --blue:#1E4FBF;
+    --ice:#EEF3FC; --white:#FFFFFF; --slate:#3A4456; --slate-light:#6B7588;
+    --line:#D7E1F4; --gold:#C8A24A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;color:var(--slate);background:var(--white);-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Source Serif 4', serif;color:var(--navy);font-weight:600;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .doc-wrap{max-width:760px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);font-weight:600;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{position: relative;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;border:2px solid var(--gold);}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .brand-name{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--navy);line-height:1.1;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:0.1em;color:var(--slate-light);text-transform:uppercase;margin-top:2px;}
+  nav.links{display:flex;align-items:center;gap:36px;}
+nav.links a{font-size:14.5px;font-weight:500;color:var(--slate);}
+nav.links a:hover{color:var(--blue);}
+
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;}
+.burger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width:920px){
+  .burger{display:flex;}
+  nav.links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease;
+    z-index: 60;
+  }
+  nav.links.open{max-height:320px;}
+  nav.links a{width:100%;padding:14px 32px;border-bottom:1px solid var(--ice);font-size:15px;}
+}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);padding:11px 22px;border-radius:3px;font-size:14px;font-weight:600;border:1px solid var(--blue);transition:all .2s ease;}
+  .btn:hover{background:var(--navy);border-color:var(--navy);}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:56px 0 48px;}
+  .page-hero h1{color:var(--white);font-size:34px;margin-top:10px;}
+  .page-hero p{color:#C7D4EC;font-size:14.5px;margin-top:12px;}
+
+  .doc{padding:72px 0 96px;}
+  .doc-card{border:1px solid var(--line);border-radius:6px;padding:48px 52px;}
+  .doc-card h2{font-size:18px;margin:34px 0 12px;border-left:3px solid var(--blue);padding-left:14px;}
+  .doc-card h2:first-of-type{margin-top:0;}
+  .doc-card p,.doc-card li{font-size:14.5px;line-height:1.8;color:var(--slate);margin-bottom:10px;}
+  .doc-card ul{margin:8px 0 14px 0;padding-left:20px;}
+  .doc-card a.inline{color:var(--blue);font-weight:500;}
+  .doc-card a.inline:hover{text-decoration:underline;}
+  .updated{font-size:12.5px;color:var(--slate-light);margin-bottom:30px;border-bottom:1px solid var(--line);padding-bottom:24px;}
+  .back-link{display:inline-flex;align-items:center;gap:8px;margin-top:36px;font-size:13.5px;font-weight:600;color:var(--blue);}
+  .back-link:hover{color:var(--navy);}
+
+  footer{background:var(--navy-deep);color:#A9B7D2;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);max-width:1180px;margin:0 auto;padding-left:32px;padding-right:32px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h5{color:var(--white);font-size:13.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;font-family:'Inter',sans-serif;font-weight:600;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;}
+  footer a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12.5px;color:#7385A6;flex-wrap:wrap;gap:10px;max-width:1180px;margin:0 auto;padding-left:32px;padding-right:32px;}
+
+  @media (max-width:920px){
+    nav.links{display:flex;}
+    .doc-card{padding:32px 26px;}
+    .page-hero h1{font-size:27px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  /* ===== universal mobile safety net ===== */
+html{-webkit-text-size-adjust:100%;}
+body{overflow-x:hidden;}
+img{max-width:100%;height:auto;}
+.wrap,.doc-wrap{padding-left:20px;padding-right:20px;}
+
+@media (max-width:600px){
+  .nav{padding:14px 20px;}
+  .brand-name{font-size:15px;}
+  .brand-name span{font-size:9.5px;}
+  .btn{padding:9px 16px;font-size:13px;}
+
+  section{padding:56px 0;}
+  .page-hero{padding:44px 0 36px;}
+  .page-hero h1{font-size:25px;}
+  .page-hero p{font-size:14px;}
+
+  h2{font-size:22px !important;}
+  .section-head h2{font-size:22px !important;}
+
+  .hero{padding:56px 0 64px;}
+  .hero h1{font-size:27px !important;}
+  .hero p.lead{font-size:14.5px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-cta .btn{justify-content:center;text-align:center;}
+  .hero-meta{gap:18px;}
+  .hero-meta strong{font-size:19px;}
+
+  .slip{padding:22px 18px;}
+  .slip-row{font-size:12.5px;grid-template-columns:1fr auto auto;}
+
+  .services-grid,.tutors-grid,.subjects-grid{grid-template-columns:1fr !important;}
+  .stat strong{font-size:32px;}
+
+  .about-grid,.mission-grid,.contact-grid{grid-template-columns:1fr !important;gap:32px !important;}
+
+  .doc-card{padding:24px 18px !important;}
+  .doc-card h2{font-size:16px;}
+  .doc-card p,.doc-card li{font-size:13.5px;}
+
+  .cta-band h2{font-size:22px;}
+  .footer-grid{grid-template-columns:1fr !important;gap:28px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:23px !important;}
+  .brand-name span{display:none;}
+}
+</style>
 </head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/">
+     <div class="brand-mark"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+      <div class="brand-name">Nuel's Science Tutorial<span>Ogun State, Nigeria</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="/#services">Programmes</a>
+      <a href="/about">About</a>
+      <a href="/tutors">Tutors</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Book a session</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#9DC0FF;">Legal</span>
+    <h1>Terms of use</h1>
+    <p>The terms that apply when you use this website.</p>
+  </div>
+</div>
+
+<section class="doc">
+  <div class="doc-wrap">
+    <div class="doc-card">
+      <p class="updated">Last updated: June 2026</p>
+
+      <p>Welcome to Nuel's Science Tutorial. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with any part of these terms, please discontinue use of this website.</p>
+
+      <p>Nuel's Science Tutorial provides educational content for learning and informational purposes only. All materials on this website, including text, images, and tutorials, are provided to help users improve their skills and knowledge.</p>
+
+      <h2>Use of content</h2>
+      <p>All content on this website is owned by Nuel's Science Tutorial unless otherwise stated. You may view, read, and share our content for personal and educational use only. You may not copy, reproduce, distribute, or republish any material from this website without prior written permission.</p>
+
+      <h2>User conduct</h2>
+      <p>While using this website, you agree not to engage in any activity that may harm the website, its content, or other users. This includes attempting to hack, disrupt services, or misuse any part of the site.</p>
+
+      <h2>External links</h2>
+      <p>Nuel's Science Tutorial may include links to third-party websites, such as WhatsApp or reference materials. We are not responsible for the content, policies, or practices of these external websites.</p>
+
+      <h2>Disclaimer</h2>
+      <p>The content provided on this website is offered without guarantees of specific outcomes. Nuel's Science Tutorial is not responsible for any loss, damage, or inconvenience resulting from the use of our content.</p>
+
+      <h2>Changes to these terms</h2>
+      <p>We reserve the right to update or modify these Terms of Use at any time without prior notice. Any changes will be posted on this page, and continued use of the website signifies acceptance of those changes.</p>
+
+      <h2>Contact us</h2>
+      <p>If you have any questions or concerns about these Terms of Use, please reach out by email at <a class="inline" href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a>.</p>
+
+      <a class="back-link" href="/">&larr; Back to home</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <div class="brand-mark" style="background:#fff;color:var(--navy);">N</div>
+        <div style="color:#fff;font-family:'Source Serif 4',serif;font-weight:600;">Nuel's Science Tutorial</div>
+      </div>
+      <p style="font-size:13.5px;line-height:1.7;max-width:300px;">Helping students excel in WAEC, JAMB, and the core sciences through structured, practical teaching.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/tutors">Our tutors</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a></li>
+        <li><a href="https://wa.me/2348126296816">WhatsApp us</a></li>
+        <li>0812 629 6816</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Nuel's Science Tutorial. All rights reserved.</span>
+    <span>Ogun State, Nigeria</span>
+  </div>
+</footer>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burgerBtn.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
+
 </body>
-   <div class="page-content">
-
-    <h1>Terms of Use</h1>
-
-    <p>Welcome to NUEL'S SCIENCE TUTORIAL. By accessing and using this website , you agree to comply with and be bound by
-        the following terms and conditions. If you do not agree with any part of these terms, please discontinue use of this
-        website.</p>
-
-    <p>Nuel's Science Tutorial provides educational tutorial content for learning and informational purposes only. All 
-        materials on this website, including text, images, and tutorials, are provided to help users improve their skills
-        and knowledge.</p>
-
-    <p>Use of Content: All content on this website is owned by Nuel's Science Tutorial unless otherwise stated. You may
-        view, read, and share our content for personal and educational use only. You may not copy, reproduce, distribute,
-        or republish any material from this website without prior written permission.</p>
-
-    <p>User Conduct: While using this website, you agree not to engage in any activity that may harm the website, its
-        content, or other users. This includes attempting to hack, disrupt services, or misuse any part of the site.</p>
-
-    <p>External Links: Nuel's Science Tutorial may include links to third-party websites such as whatsapp platforms and
-       or reference materials. We are not responsible for the content, policies, or practices of these external websites.</p>
-
-    <p>Disclaimer: The content provided on this website are offered without guarantees of specific outcomes. Nuel's Science
-        Tutorial is not responsible for any loss, damage, or inconvenience resulting from the use of our content.</p>
-
-    <p>Changes to Terms: We reserve the right to update or modify these Terms of Use at any time without prior notice.
-        Any changes will be posted on this page, and continued use of the website signifies acceptance of those changes.</p>
-    
-    <p>Contact Information: If you have any questions or concerns about this Terms of Use, please contact us via email at <a
-        href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a>.</p>
-
-    <!-- Back to home  -->
-     <a href="index.html" class="back-btn"> Back to Home</a>
-     </div>
-
-    </body>
-    </html>
+</html>
