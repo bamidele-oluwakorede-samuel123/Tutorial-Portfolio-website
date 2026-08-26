@@ -7,4 +7,4 @@ Allow: /
 
 # Sitemap location (replace with actual site URL after deployment)
 Sitemap:
-https://nuelssciencetutorial.netlify.app/sitemap.xml
+https://nuels-science-tutorial.vercel.app/sitemap.xml
