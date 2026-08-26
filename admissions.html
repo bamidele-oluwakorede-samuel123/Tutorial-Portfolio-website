@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions Guide | Nuel's Science Tutorial</title>
+<meta name="description" content="A JAMB and university admissions guide for Nigerian students &mdash; how cutoff marks work, a directory of Nigerian universities, and JAMB subject combinations with study tips for popular courses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F3D24; --navy-deep:#0A2A19; --blue:#2F7A3D; --blue-bright:#3F9950;
+    --ice:#F0F7ED; --white:#FFFFFF; --slate:#33392F; --slate-light:#6E7568;
+    --line:#DCE8D2; --gold:#8DC63F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--slate);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Source Serif 4', serif;color:var(--navy);font-weight:600;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);font-weight:600;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;border:2px solid var(--gold);overflow:hidden;}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .brand-name{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--navy);line-height:1.1;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:0.1em;color:var(--slate-light);text-transform:uppercase;margin-top:2px;}
+  nav.links{display:flex;align-items:center;gap:32px;}
+  nav.links a{font-size:14.5px;font-weight:500;color:var(--slate);}
+  nav.links a:hover{color:var(--blue);}
+  nav.links a.active{color:var(--blue);}
+
+  .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;}
+  .burger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media (max-width:960px){
+    .burger{display:flex;}
+    nav.links{
+      display:flex;flex-direction:column;align-items:flex-start;gap:0;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--white);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;z-index:60;
+    }
+    nav.links.open{max-height:360px;}
+    nav.links a{width:100%;padding:14px 32px;border-bottom:1px solid var(--ice);font-size:15px;}
+  }
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);padding:11px 22px;border-radius:3px;font-size:14px;font-weight:600;border:1px solid var(--blue);transition:all .2s ease;}
+  .btn:hover{background:var(--navy);border-color:var(--navy);}
+  .btn-outline{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:var(--white);}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:64px 0 52px;}
+  .page-hero h1{color:var(--white);font-size:34px;margin-top:10px;max-width:700px;}
+  .page-hero p{color:#C7D4EC;font-size:15px;margin-top:14px;max-width:620px;line-height:1.7;}
+  .page-hero .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+
+  section{padding:72px 0;}
+  .section-head{max-width:680px;margin-bottom:36px;}
+  .section-head h2{font-size:28px;margin-top:8px;}
+  .section-head p{margin-top:12px;font-size:15px;line-height:1.7;color:var(--slate-light);}
+  .bg-ice{background:var(--ice);}
+
+  /* callout */
+  .callout{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:4px;padding:22px 26px;margin-bottom:12px;}
+  .callout h4{font-size:14.5px;color:var(--navy);margin-bottom:6px;}
+  .callout p{font-size:13.5px;line-height:1.75;color:var(--slate);}
+  .callout p a{color:var(--blue);font-weight:600;}
+
+  /* stat/tier cards for cutoff explainer */
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:28px;}
+  .tier-card{background:var(--white);padding:26px 24px;}
+  .tier-card .tier-tag{font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .tier-card h3{font-size:17px;margin:10px 0 8px;}
+  .tier-card p{font-size:13.5px;line-height:1.65;color:var(--slate-light);}
+
+  /* search + filter bar */
+  .filter-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+  .filter-bar input[type="text"]{flex:1;min-width:220px;padding:12px 16px;border:1px solid var(--line);border-radius:3px;font-family:'Inter',sans-serif;font-size:14px;color:var(--navy);background:var(--white);}
+  .filter-bar input[type="text"]:focus{outline:none;border-color:var(--blue);}
+  .filter-bar select{padding:12px 14px;border:1px solid var(--line);border-radius:3px;font-family:'Inter',sans-serif;font-size:14px;color:var(--navy);background:var(--white);}
+  .filter-count{font-size:12.5px;color:var(--slate-light);margin-bottom:14px;}
+
+  /* university groups */
+  .uni-group{margin-bottom:8px;}
+  .uni-group-title{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:30px 0 14px;}
+  .uni-group-title:first-child{margin-top:0;}
+  .uni-group-title .count{font-weight:500;color:var(--slate-light);text-transform:none;letter-spacing:0;font-size:12.5px;}
+  .uni-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .uni-card{border:1px solid var(--line);border-radius:4px;padding:14px 16px;font-size:13.5px;background:var(--white);}
+  .uni-card .uname{color:var(--navy);font-weight:600;display:block;margin-bottom:2px;}
+  .uni-card .ustate{color:var(--slate-light);font-size:12px;}
+  .uni-card.hide{display:none;}
+  .uni-empty{display:none;padding:24px;text-align:center;color:var(--slate-light);font-size:13.5px;border:1px dashed var(--line);border-radius:4px;}
+
+  /* course accordion */
+  .course-list{border-top:1px solid var(--line);}
+  .course-item{border-bottom:1px solid var(--line);}
+  .course-item summary{
+    list-style:none;cursor:pointer;padding:20px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .course-item summary::-webkit-details-marker{display:none;}
+  .course-item summary .cname{font-family:'Source Serif 4',serif;font-size:17px;color:var(--navy);font-weight:600;}
+  .course-item summary .cplus{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--blue);transition:transform .2s ease;}
+  .course-item[open] summary .cplus{transform:rotate(45deg);}
+  .course-body{padding:0 4px 26px;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .course-body h5{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+  .course-body p{font-size:13.5px;line-height:1.7;color:var(--slate);margin-bottom:10px;}
+  .course-body ul{padding-left:18px;}
+  .course-body li{font-size:13.5px;line-height:1.85;color:var(--slate);}
+
+  /* CTA */
+  .cta-band{background:var(--blue);color:var(--white);padding:64px 0;text-align:center;}
+  .cta-band h2{color:var(--white);font-size:27px;margin-bottom:12px;}
+  .cta-band p{color:#DCE8FF;font-size:15px;margin-bottom:24px;}
+  .cta-band .btn{background:var(--white);color:var(--blue);border-color:var(--white);}
+  .cta-band .btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  footer{background:var(--navy-deep);color:#A9B7D2;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h5{color:var(--white);font-size:13.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;font-weight:600;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;}
+  footer a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12.5px;color:#7385A6;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:960px){
+    .tier-grid{grid-template-columns:1fr;}
+    .uni-grid{grid-template-columns:1fr 1fr;}
+    .course-body{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  html{-webkit-text-size-adjust:100%;}
+  .wrap{padding-left:20px;padding-right:20px;}
+  @media (max-width:600px){
+    .nav{padding:14px 20px;}
+    .brand-name{font-size:15px;}
+    .brand-name span{font-size:9.5px;}
+    .btn{padding:9px 16px;font-size:13px;}
+    section{padding:52px 0;}
+    .page-hero{padding:44px 0 36px;}
+    .page-hero h1{font-size:24px;}
+    .page-hero p{font-size:13.5px;}
+    .section-head h2{font-size:21px !important;}
+    .uni-grid{grid-template-columns:1fr;}
+    .course-item summary .cname{font-size:15px;}
+    .cta-band h2{font-size:21px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+  }
+
+  /* WhatsApp floating button */
+  .wa-float{position:fixed;bottom:26px;right:26px;z-index:300;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px -6px rgba(0,0,0,0.4);transition:transform .2s ease;}
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:29px;height:29px;fill:#fff;}
+  .wa-ring{position:fixed;bottom:26px;right:26px;z-index:299;width:58px;height:58px;border-radius:50%;background:#25D366;opacity:.55;animation:wa-pulse 2.2s ease-out infinite;pointer-events:none;}
+  @keyframes wa-pulse{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.7);opacity:0;}}
+  @media (max-width:600px){
+    .wa-float,.wa-ring{width:50px;height:50px;bottom:16px;right:16px;}
+    .wa-float svg{width:25px;height:25px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/">
+      <div class="brand-mark"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+      <div class="brand-name">Nuel's Science Tutorial<span>Ogun State, Nigeria</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="/#services">Programmes</a>
+      <a href="/about">About</a>
+      <a href="/tutors">Tutors</a>
+      <a href="/admissions" class="active">Admissions Guide</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial.">Book a session</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#9DC0FF;">Admissions</span>
+    <h1>Your JAMB &amp; university admissions guide.</h1>
+    <p>How cutoff marks actually work, a directory of Nigerian universities, and the right JAMB subject combination and study approach for the course you want &mdash; all in one place.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#courses">Find my course</a>
+      <a class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5);" href="#universities">Browse universities</a>
+    </div>
+  </div>
+</div>
+
+<section id="cutoff">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cutoff marks explained</span>
+      <h2>How JAMB and university cutoff marks work</h2>
+      <p>"Cutoff mark" actually refers to two different numbers, and mixing them up is the most common mistake applicants make.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <span class="tier-tag">Tier 1</span>
+        <h3>JAMB's national minimum</h3>
+        <p>After every UTME, JAMB sets a national baseline score that all candidates need to even be considered for admission historically around 140&ndash;160 for universities and lower for polytechnics and colleges of education. This figure is announced fresh each admission cycle.</p>
+      </div>
+      <div class="tier-card">
+        <span class="tier-tag">Tier 2</span>
+        <h3>Institutional / departmental cutoff</h3>
+        <p>Each university then sets its own, usually higher, cutoff per course often well above JAMB's minimum for competitive courses like Medicine, Law, and Pharmacy in popular schools. This is decided by the institution after JAMB's CAPS portal opens.</p>
+      </div>
+      <div class="tier-card">
+        <span class="tier-tag">Tier 3</span>
+        <h3>Post-UTME / DE screening</h3>
+        <p>Most universities also run their own post-UTME or direct-entry screening (a test, an aggregate score, or O'level review) before finally admitting candidates through CAPS.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>Important: always confirm the current figure yourself</h4>
+      <p>Cutoff marks change every single admission cycle and differ by school and department. We deliberately don't print specific numbers here because a wrong figure could cost you an application. For the current, official cutoff mark for any school and course, check the <a href="https://www.jamb.gov.ng" target="_blank" rel="noopener">JAMB CAPS portal (jamb.gov.ng)</a> or that school's admissions page &mdash; or message us on WhatsApp and we'll help you look it up.</p>
+    </div>
+  </div>
+</section>
+
+<section id="universities" class="bg-ice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Where you could study</span>
+      <h2>Nigerian universities at a glance</h2>
+      <p>A working directory of Federal, State, and Private universities across Nigeria, grouped by ownership. Search by name or state below. This list is a starting point, not exhaustive. JAMB's official brochure has the complete, current list of approved institutions.</p>
+    </div>
+
+    <div class="filter-bar">
+      <input type="text" id="uniSearch" placeholder="Search by university or state name&hellip;">
+      <select id="uniFilter">
+        <option value="all">All ownership types</option>
+        <option value="federal">Federal</option>
+        <option value="state">State</option>
+        <option value="private">Private</option>
+      </select>
+    </div>
+    <p class="filter-count" id="uniCount"></p>
+
+    <div id="uniGroups">
+      <div class="uni-group" data-type="federal">
+        <div class="uni-group-title">Federal Universities <span class="count">(sample)</span></div>
+        <div class="uni-grid">
+          <div class="uni-card"><span class="uname">University of Lagos (UNILAG)</span><span class="ustate">Lagos</span></div>
+          <div class="uni-card"><span class="uname">University of Ibadan (UI)</span><span class="ustate">Oyo</span></div>
+          <div class="uni-card"><span class="uname">Obafemi Awolowo University (OAU)</span><span class="ustate">Osun</span></div>
+          <div class="uni-card"><span class="uname">University of Nigeria, Nsukka (UNN)</span><span class="ustate">Enugu</span></div>
+          <div class="uni-card"><span class="uname">Ahmadu Bello University (ABU)</span><span class="ustate">Kaduna</span></div>
+          <div class="uni-card"><span class="uname">University of Benin (UNIBEN)</span><span class="ustate">Edo</span></div>
+          <div class="uni-card"><span class="uname">University of Port Harcourt (UNIPORT)</span><span class="ustate">Rivers</span></div>
+          <div class="uni-card"><span class="uname">University of Ilorin (UNILORIN)</span><span class="ustate">Kwara</span></div>
+          <div class="uni-card"><span class="uname">Bayero University Kano (BUK)</span><span class="ustate">Kano</span></div>
+          <div class="uni-card"><span class="uname">Usmanu Danfodiyo University</span><span class="ustate">Sokoto</span></div>
+          <div class="uni-card"><span class="uname">Federal University of Technology, Akure (FUTA)</span><span class="ustate">Ondo</span></div>
+          <div class="uni-card"><span class="uname">Federal University of Technology, Owerri (FUTO)</span><span class="ustate">Imo</span></div>
+          <div class="uni-card"><span class="uname">Federal University of Technology, Minna</span><span class="ustate">Niger</span></div>
+          <div class="uni-card"><span class="uname">Nnamdi Azikiwe University (UNIZIK)</span><span class="ustate">Anambra</span></div>
+          <div class="uni-card"><span class="uname">University of Uyo (UNIUYO)</span><span class="ustate">Akwa Ibom</span></div>
+          <div class="uni-card"><span class="uname">University of Calabar (UNICAL)</span><span class="ustate">Cross River</span></div>
+          <div class="uni-card"><span class="uname">University of Jos (UNIJOS)</span><span class="ustate">Plateau</span></div>
+          <div class="uni-card"><span class="uname">University of Maiduguri (UNIMAID)</span><span class="ustate">Borno</span></div>
+          <div class="uni-card"><span class="uname">Federal University of Agriculture, Abeokuta (FUNAAB)</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Joseph Sarwuan Tarka University, Makurdi</span><span class="ustate">Benue</span></div>
+          <div class="uni-card"><span class="uname">Modibbo Adama University, Yola</span><span class="ustate">Adamawa</span></div>
+          <div class="uni-card"><span class="uname">University of Abuja</span><span class="ustate">FCT</span></div>
+          <div class="uni-card"><span class="uname">Federal University Oye-Ekiti (FUOYE)</span><span class="ustate">Ekiti</span></div>
+          <div class="uni-card"><span class="uname">Federal University Dutse</span><span class="ustate">Jigawa</span></div>
+          <div class="uni-card"><span class="uname">Federal University Dutsin-Ma</span><span class="ustate">Katsina</span></div>
+          <div class="uni-card"><span class="uname">Federal University Lafia</span><span class="ustate">Nasarawa</span></div>
+          <div class="uni-card"><span class="uname">Federal University Lokoja</span><span class="ustate">Kogi</span></div>
+          <div class="uni-card"><span class="uname">Federal University Gashua</span><span class="ustate">Yobe</span></div>
+          <div class="uni-card"><span class="uname">Federal University Gusau</span><span class="ustate">Zamfara</span></div>
+          <div class="uni-card"><span class="uname">Federal University Kashere</span><span class="ustate">Gombe</span></div>
+          <div class="uni-card"><span class="uname">Federal University Otuoke</span><span class="ustate">Bayelsa</span></div>
+          <div class="uni-card"><span class="uname">Federal University Wukari</span><span class="ustate">Taraba</span></div>
+          <div class="uni-card"><span class="uname">Federal University Birnin Kebbi</span><span class="ustate">Kebbi</span></div>
+          <div class="uni-card"><span class="uname">Michael Okpara University of Agriculture, Umudike</span><span class="ustate">Abia</span></div>
+          <div class="uni-card"><span class="uname">Alex Ekwueme Federal University Ndufu-Alike</span><span class="ustate">Ebonyi</span></div>
+          <div class="uni-card"><span class="uname">Federal University of Petroleum Resources, Effurun (FUPRE)</span><span class="ustate">Delta</span></div>
+          <div class="uni-card"><span class="uname">National Open University of Nigeria (NOUN)</span><span class="ustate">Nationwide / distance learning</span></div>
+        </div>
+      </div>
+
+      <div class="uni-group" data-type="state">
+        <div class="uni-group-title">State Universities <span class="count">(sample)</span></div>
+        <div class="uni-grid">
+          <div class="uni-card"><span class="uname">Lagos State University (LASU)</span><span class="ustate">Lagos</span></div>
+          <div class="uni-card"><span class="uname">Ladoke Akintola University of Technology (LAUTECH)</span><span class="ustate">Oyo</span></div>
+          <div class="uni-card"><span class="uname">Olabisi Onabanjo University (OOU)</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Tai Solarin University of Education (TASUED)</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Rivers State University (RSU)</span><span class="ustate">Rivers</span></div>
+          <div class="uni-card"><span class="uname">Delta State University (DELSU)</span><span class="ustate">Delta</span></div>
+          <div class="uni-card"><span class="uname">Ambrose Alli University</span><span class="ustate">Edo</span></div>
+          <div class="uni-card"><span class="uname">Ekiti State University (EKSU)</span><span class="ustate">Ekiti</span></div>
+          <div class="uni-card"><span class="uname">Osun State University (UNIOSUN)</span><span class="ustate">Osun</span></div>
+          <div class="uni-card"><span class="uname">Adekunle Ajasin University</span><span class="ustate">Ondo</span></div>
+          <div class="uni-card"><span class="uname">Enugu State University of Science and Technology (ESUT)</span><span class="ustate">Enugu</span></div>
+          <div class="uni-card"><span class="uname">Imo State University (IMSU)</span><span class="ustate">Imo</span></div>
+          <div class="uni-card"><span class="uname">Abia State University (ABSU)</span><span class="ustate">Abia</span></div>
+          <div class="uni-card"><span class="uname">Kaduna State University (KASU)</span><span class="ustate">Kaduna</span></div>
+          <div class="uni-card"><span class="uname">Kano University of Science and Technology, Wudil</span><span class="ustate">Kano</span></div>
+          <div class="uni-card"><span class="uname">Prince Abubakar Audu University</span><span class="ustate">Kogi</span></div>
+          <div class="uni-card"><span class="uname">Benue State University (BSU)</span><span class="ustate">Benue</span></div>
+          <div class="uni-card"><span class="uname">Cross River University of Technology (CRUTECH)</span><span class="ustate">Cross River</span></div>
+          <div class="uni-card"><span class="uname">Akwa Ibom State University</span><span class="ustate">Akwa Ibom</span></div>
+          <div class="uni-card"><span class="uname">Ebonyi State University (EBSU)</span><span class="ustate">Ebonyi</span></div>
+          <div class="uni-card"><span class="uname">Niger Delta University</span><span class="ustate">Bayelsa</span></div>
+          <div class="uni-card"><span class="uname">Kwara State University (KWASU)</span><span class="ustate">Kwara</span></div>
+          <div class="uni-card"><span class="uname">Plateau State University</span><span class="ustate">Plateau</span></div>
+          <div class="uni-card"><span class="uname">Nasarawa State University (NSUK)</span><span class="ustate">Nasarawa</span></div>
+          <div class="uni-card"><span class="uname">Gombe State University</span><span class="ustate">Gombe</span></div>
+        </div>
+      </div>
+
+      <div class="uni-group" data-type="private">
+        <div class="uni-group-title">Private Universities <span class="count">(sample)</span></div>
+        <div class="uni-grid">
+          <div class="uni-card"><span class="uname">Covenant University</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Bells University of Technology</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Crawford University</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Babcock University</span><span class="ustate">Ogun</span></div>
+          <div class="uni-card"><span class="uname">Bowen University</span><span class="ustate">Osun</span></div>
+          <div class="uni-card"><span class="uname">Afe Babalola University (ABUAD)</span><span class="ustate">Ekiti</span></div>
+          <div class="uni-card"><span class="uname">Landmark University</span><span class="ustate">Kwara</span></div>
+          <div class="uni-card"><span class="uname">Redeemer's University (RUN)</span><span class="ustate">Osun</span></div>
+          <div class="uni-card"><span class="uname">Pan-Atlantic University</span><span class="ustate">Lagos</span></div>
+          <div class="uni-card"><span class="uname">Caleb University</span><span class="ustate">Lagos</span></div>
+          <div class="uni-card"><span class="uname">Igbinedion University</span><span class="ustate">Edo</span></div>
+          <div class="uni-card"><span class="uname">Elizade University</span><span class="ustate">Ondo</span></div>
+          <div class="uni-card"><span class="uname">Lead City University</span><span class="ustate">Oyo</span></div>
+          <div class="uni-card"><span class="uname">Al-Hikmah University</span><span class="ustate">Kwara</span></div>
+          <div class="uni-card"><span class="uname">Veritas University</span><span class="ustate">FCT</span></div>
+          <div class="uni-card"><span class="uname">Baze University</span><span class="ustate">FCT</span></div>
+          <div class="uni-card"><span class="uname">American University of Nigeria (AUN)</span><span class="ustate">Adamawa</span></div>
+          <div class="uni-card"><span class="uname">Novena University</span><span class="ustate">Delta</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="uni-empty" id="uniEmpty">No universities match that search, try a different name or state.</div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Course guide</span>
+      <h2>JAMB subject combinations &amp; study tips by course</h2>
+      <p>English Language is compulsory for every combination below. Tap a course to see the full combination, typical O'level requirements, and how to actually prepare for it.</p>
+    </div>
+
+    <div class="course-list">
+
+      <details class="course-item">
+        <summary><span class="cname">Medicine &amp; Surgery (MBBS)</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Physics, Chemistry, Biology.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, Chemistry, and Biology &mdash; usually at one sitting for the most competitive schools.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Prioritise Biology and Chemistry, they carry the most conceptual overlap with what you'll face in post-UTME screening.</li>
+              <li>Practice past questions under timed conditions weekly; Medicine cutoffs reward speed and accuracy, not just knowledge.</li>
+              <li>Build strong foundations in human biology topics (genetics, physiology) early, since they resurface throughout the course.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Nursing Science</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Physics, Chemistry, Biology.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, Chemistry, and Biology.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Focus heavily on Biology, most Nursing post-UTME screenings weight it highest.</li>
+              <li>Practice diagrams and labelling questions; anatomy-style questions come up often.</li>
+              <li>Revise basic Chemistry calculations (concentrations, moles) since they show up in pharmacology-adjacent questions later.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Pharmacy</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Physics, Chemistry, Biology.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, Chemistry, and Biology.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Chemistry is the backbone of Pharmacy, get very comfortable with organic chemistry and stoichiometry.</li>
+              <li>Don't neglect Physics; drug delivery and dosage-related questions often lean on basic physics concepts.</li>
+              <li>Pharmacy cutoffs tend to sit close to Medicine's, so treat your prep with the same intensity.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Medical Laboratory Science</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Physics, Chemistry, Biology.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, Chemistry, and Biology.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Biology and Chemistry questions dominate; drill microbiology and basic biochemistry topics from the WAEC syllabus.</li>
+              <li>Pay attention to laboratory-technique style questions, they appear more here than in other biology-heavy courses.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Law (LL.B)</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Literature-in-English, Government (or CRS/IRS), and one other Arts/Social Science subject.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Literature-in-English, Government, and Mathematics are typically required.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>English Language and Literature carry real weight, read widely and practice comprehension and essay-style questions.</li>
+              <li>Law is one of the most competitive courses nationally; a strong Government or CRS/IRS score is often the deciding factor.</li>
+              <li>Follow current affairs; many Government questions and post-UTME essays draw on recent civic and legal issues.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Computer Science</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Physics, and one of Chemistry, Biology, Agricultural Science, Geography, or Economics.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, and Physics are essential; a fourth science or social science subject completes the set.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Mathematics is the single biggest lever for your score, master algebra, functions, and logic-based questions.</li>
+              <li>Physics questions tend to focus on electricity and basic mechanics; prioritise those topics if time is short.</li>
+              <li>Many schools now run a coding-aptitude or logic screening at post-UTME stage, practising basic logical reasoning helps.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Electrical / Electronic Engineering</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Physics, Chemistry.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, and Chemistry.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Mathematics and Physics together decide most of your score, give them the majority of your revision time.</li>
+              <li>Focus your Physics revision on electricity, magnetism, and waves; they're the most tested topics for this course.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Mechanical &amp; Civil Engineering</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Physics, Chemistry.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, and Chemistry.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Build strong mechanics and force/energy fundamentals in Physics; they underpin most engineering coursework later.</li>
+              <li>Practice applied Mathematics questions (mensuration, trigonometry, vectors) since they mirror early coursework.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Accounting</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Economics, and one of Financial Accounting, Commerce, or Government.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Economics, and a commercial subject such as Financial Accounting or Commerce.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Mathematics accuracy matters most here, practice speed drills on ratios, percentages, and basic algebra.</li>
+              <li>Get comfortable with accounting terminology early if your school offers it; it reduces first-year culture shock.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Economics</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Economics, and one other Social Science subject (Government, Geography, or Accounting).</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, and Economics.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Mathematics underpins Economics scoring more than most students expect, don't neglect it in favour of theory.</li>
+              <li>Understand core concepts (demand/supply, inflation, national income) deeply rather than memorising definitions.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Mass Communication</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language and any three of Government, Literature-in-English, CRS/IRS, Economics, or another Arts/Social Science subject &mdash; combination varies by school.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English Language plus at least one relevant Arts or Social Science subject.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>English comprehension and essay-writing carry the most weight, read newspapers and practice summarising articles.</li>
+              <li>Stay current on national and global news; many post-UTME screenings for this course test general knowledge.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Microbiology &amp; Biochemistry</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Physics, Chemistry, Biology.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, Chemistry, and Biology.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Chemistry (especially organic chemistry) and Biology are weighted heavily budget more revision time there than Physics.</li>
+              <li>Practice diagram-based and process-sequence questions; they're common in this subject area.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Architecture</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Physics, and one of Chemistry, Geography, or Fine Art.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Physics, and one relevant fourth subject; many schools also assess a portfolio or drawing test.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Mathematics accuracy (especially geometry and mensuration) matters for both UTME and school-level design tests.</li>
+              <li>If you can, start a basic sketching/drawing habit early, many schools test spatial reasoning at screening stage.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Psychology</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Biology, and two of Chemistry, Physics, Mathematics, Economics, or Government &mdash; exact combination varies by school.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Biology, and two other relevant subjects.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Check your target school's exact combination early. Psychology requirements vary more across schools than most courses.</li>
+              <li>Biology fundamentals (especially nervous system topics) give you a head start once you resume.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Agricultural Science</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Chemistry, Biology (or Agricultural Science), and Mathematics or Physics.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, Chemistry, and Biology or Agricultural Science.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Biology and Agricultural Science overlap heavily, strong grades in one usually support the other.</li>
+              <li>Cutoffs for this course tend to be more moderate than Medicine or Engineering, but don't underestimate the Chemistry component.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="course-item">
+        <summary><span class="cname">Banking &amp; Finance</span><span class="cplus">+</span></summary>
+        <div class="course-body">
+          <div>
+            <h5>JAMB combination</h5>
+            <p>English Language, Mathematics, Economics, and one of Accounting, Government, or Commerce.</p>
+            <h5>O'level requirement</h5>
+            <p>Credits in English, Mathematics, and Economics.</p>
+          </div>
+          <div>
+            <h5>Study tips</h5>
+            <ul>
+              <li>Mathematics speed and accuracy is the biggest score driver, drill percentages, interest, and ratio-based questions.</li>
+              <li>Basic financial literacy concepts (interest rates, inflation) give useful context for both UTME and first-year courses.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Not sure which combination or school fits your goals?</h2>
+    <p>Message us on WhatsApp and we'll help you plan your JAMB subjects, check current cutoff marks, and build a study schedule around them.</p>
+    <a class="btn" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20help%20planning%20my%20JAMB%20subject%20combination%20and%20admissions%20plan.">Chat with us on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark" style="background:#fff;color:var(--navy);"><img src="/images/logo.png" alt="Nuel's Science Tutorial logo"></div>
+          <div style="color:#fff;font-family:'Source Serif 4',serif;font-weight:600;">Nuel's Science Tutorial</div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.7;max-width:300px;">Helping students excel in WAEC, JAMB, and the core sciences through structured, practical teaching.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/tutors">Our tutors</a></li>
+          <li><a href="/admissions">Admissions guide</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:bamideledabira43@gmail.com">bamideledabira43@gmail.com</a></li>
+          <li><a href="https://wa.me/2348126296816">WhatsApp us</a></li>
+          <li>0812 629 6816</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Nuel's Science Tutorial. All rights reserved.</span>
+      <span>Ogun State, Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+<div class="wa-ring"></div>
+<a class="wa-float" href="https://wa.me/2348126296816?text=Good%20day%2C%20I%27d%20like%20to%20enquire%20about%20Nuel%27s%20Science%20Tutorial." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.689 4.611 1.885 6.49L4 29l7.694-1.855A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.985-1.363l-.358-.213-4.566 1.101 1.124-4.448-.234-.372A9.77 9.77 0 0 1 5.818 15c0-5.615 4.568-10.182 10.183-10.182 5.615 0 10.182 4.567 10.182 10.182 0 5.615-4.567 10.182-10.182 10.182Zm5.6-7.63c-.307-.154-1.816-.897-2.098-1-.281-.103-.486-.154-.69.155-.205.307-.792 1-.972 1.205-.179.205-.358.23-.665.077-.307-.154-1.297-.478-2.47-1.523-.913-.814-1.53-1.82-1.709-2.127-.179-.307-.019-.473.135-.626.139-.138.307-.358.46-.537.154-.18.205-.307.307-.512.103-.205.051-.384-.026-.538-.077-.154-.69-1.663-.946-2.278-.249-.598-.502-.517-.69-.526l-.588-.01a1.13 1.13 0 0 0-.818.384c-.281.307-1.075 1.05-1.075 2.56 0 1.51 1.1 2.97 1.253 3.175.154.205 2.167 3.31 5.25 4.64.734.317 1.306.506 1.752.648.736.234 1.406.201 1.936.122.59-.088 1.816-.742 2.072-1.459.256-.717.256-1.332.18-1.46-.077-.128-.282-.205-.589-.359Z"/></svg>
+</a>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burgerBtn.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
+
+<script>
+  const uniSearch = document.getElementById('uniSearch');
+  const uniFilter = document.getElementById('uniFilter');
+  const uniGroups = document.querySelectorAll('.uni-group');
+  const uniCount = document.getElementById('uniCount');
+  const uniEmpty = document.getElementById('uniEmpty');
+
+  function applyUniFilter(){
+    const q = uniSearch.value.trim().toLowerCase();
+    const type = uniFilter.value;
+    let visible = 0;
+
+    uniGroups.forEach(group => {
+      const groupType = group.getAttribute('data-type');
+      const groupMatches = (type === 'all' || type === groupType);
+      let groupVisibleCount = 0;
+
+      group.querySelectorAll('.uni-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matches = groupMatches && (q === '' || text.includes(q));
+        card.classList.toggle('hide', !matches);
+        if(matches){ groupVisibleCount++; visible++; }
+      });
+
+      group.style.display = groupVisibleCount > 0 ? '' : 'none';
+    });
+
+    uniCount.textContent = visible + ' universit' + (visible === 1 ? 'y' : 'ies') + ' shown';
+    uniEmpty.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  uniSearch.addEventListener('input', applyUniFilter);
+  uniFilter.addEventListener('change', applyUniFilter);
+  applyUniFilter();
+</script>
+
+</body>
+</html>
